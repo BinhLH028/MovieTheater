@@ -39,14 +39,30 @@ public class AppUser extends CommonEntity implements UserDetails  {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "age")
-    private Integer age;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
     @Column(name = "dob")
-    private Date dob;
+    private Date dateOfBirth;
 
     @Column(name = "gender")
     private Integer gender;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "identity_card")
+    private String identityCard;
+
+    @Column(name = "image")
+    private String image;
+
+    @Column(name = "register_date")
+    @Temporal(TemporalType.DATE)
+    private Date registerDate;
+
+    @Column(name = "score")
+    private Integer score;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
