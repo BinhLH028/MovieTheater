@@ -1,11 +1,19 @@
 package application.movietheater.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "movies")
 public class Movie {
 
@@ -58,4 +66,26 @@ public class Movie {
 
     @OneToMany(mappedBy = "movie")
     private List<MovieSchedule> movieSchedules;
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", actor='" + actor + '\'' +
+                ", content='" + content + '\'' +
+                ", director='" + director + '\'' +
+                ", duration=" + duration +
+                ", fromDate=" + fromDate +
+                ", productionCompany='" + productionCompany + '\'' +
+                ", toDate=" + toDate +
+                ", version='" + version + '\'' +
+                ", enName='" + enName + '\'' +
+                ", vnName='" + vnName + '\'' +
+                ", largeImage='" + largeImage + '\'' +
+                ", smallImage='" + smallImage + '\'' +
+                ", price=" + price +
+                ", movieTypes=" + movieTypes +
+                ", movieSchedules=" + movieSchedules +
+                '}';
+    }
 }

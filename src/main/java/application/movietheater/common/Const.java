@@ -10,6 +10,8 @@ public class Const {
 
     public static String REGEX_PATTERN = "^(.+)@(\\S+)$";
 
+    public static int PAGE_SIZE = 20;
+
     //region Database
     public static String DB_USERNAME;
     public static String DB_PASSWORD;
