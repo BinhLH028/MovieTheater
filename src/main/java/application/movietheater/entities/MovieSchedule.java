@@ -23,12 +23,12 @@ public class MovieSchedule {
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
-    private fa.training.model.Movie movie;
+    private Movie movie;
 
     @ManyToOne
     @JoinColumn(name = "cinema_room_id")
-    private fa.training.model.CinemaRoom cinemaRoom;
+    private CinemaRoom cinemaRoom;
 
     @OneToMany(mappedBy = "movieSchedule")
-    private List<fa.training.model.ScheduleSeat> scheduleSeats;
+    private List<ScheduleSeat> scheduleSeats;
 }

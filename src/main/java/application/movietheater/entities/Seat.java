@@ -1,6 +1,6 @@
 package application.movietheater.entities;
 
-import fa.training.model.enums.SeatType;
+import application.movietheater.enums.SeatType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,8 +33,8 @@ public class Seat {
 
     @ManyToOne
     @JoinColumn(name = "cinema_room_id")
-    private fa.training.model.CinemaRoom cinemaRoom;
+    private CinemaRoom cinemaRoom;
 
     @OneToMany(mappedBy = "seat")
-    private List<fa.training.model.ScheduleSeat> scheduleSeats;
+    private List<ScheduleSeat> scheduleSeats;
 }

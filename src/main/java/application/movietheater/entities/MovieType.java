@@ -12,9 +12,9 @@ public class MovieType {
 
     @ManyToOne
     @JoinColumn(name = "type_id")
-    private fa.training.model.Type type;
+    private Type type;
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
-    private fa.training.model.Movie movie;
+    private Movie movie;
 }

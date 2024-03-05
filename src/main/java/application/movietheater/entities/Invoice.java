@@ -1,6 +1,6 @@
 package application.movietheater.entities;
 
-import fa.training.model.enums.InvoiceStatus;
+import application.movietheater.enums.InvoiceStatus;
 import jakarta.persistence.*;
 import lombok.ToString;
 
@@ -30,13 +30,13 @@ public class Invoice {
     private InvoiceStatus status;
 
     @OneToMany(mappedBy = "invoice")
-    private List<fa.training.model.ScheduleSeat> scheduleSeats;
+    private List<ScheduleSeat> scheduleSeats;
 
     @OneToOne(mappedBy = "invoice", cascade = CascadeType.ALL)
     @ToString.Exclude
-    private fa.training.model.Ticket ticket;
+    private Ticket ticket;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
-    private fa.training.model.Account account;
+    @JoinColumn(name = "user_id")
+    private AppUser appUser;
 }

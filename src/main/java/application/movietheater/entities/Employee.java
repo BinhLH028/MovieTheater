@@ -5,12 +5,13 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Entity
-@EqualsAndHashCode(exclude = "account")
+@EqualsAndHashCode(exclude = "appUser")
 @Table(name = "employees")
-public class Employee extends fa.training.model.Account {
+public class Employee extends AppUser {
+
     @OneToOne(fetch = FetchType.EAGER)
     @MapsId
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "user_id")
     @ToString.Exclude
-    private fa.training.model.Account account;
+    private AppUser appUser;
 }

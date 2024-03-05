@@ -1,6 +1,6 @@
 package application.movietheater.entities;
 
-import fa.training.model.enums.SeatStatus;
+import application.movietheater.enums.SeatStatus;
 import jakarta.persistence.*;
 
 @Entity

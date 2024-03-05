@@ -5,15 +5,15 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 @Entity
-@EqualsAndHashCode(exclude = "account")
+@EqualsAndHashCode(exclude = "appUser")
 @Table(name = "members")
-public class Member extends Account{
+public class Member extends AppUser{
 
     @OneToOne(fetch = FetchType.EAGER)
     @MapsId
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "user_id")
     @ToString.Exclude
-    private Account account;
+    private AppUser appUser;
 
 
 }
